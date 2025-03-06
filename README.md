@@ -84,7 +84,7 @@ Errors and missing files are logged in:
 ## Notes
 - Ensure you replace `USE_YOUR_COOKIES` in `downloader.py` with your actual NASA cookies.
 - The scripts are designed to handle missing data gracefully, but logs should be checked for any issues.
-- The dataset spans from **2004-06-01 to 2014-01-01**.
+- The dataset spans from **2000-01-01 to 2024-01-01**.
 
 ---
 
