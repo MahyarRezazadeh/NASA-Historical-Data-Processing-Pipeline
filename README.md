@@ -66,7 +66,8 @@ python add_pm25.py
 ├── NASA_downloads/        # Directory where NASA datasets are temporarily stored
 ├── PM25_monthly/          # Directory for monthly PM2.5 averages
 ├── pollution_monthly/     # Intermediate directory for pollution data
-├── bol_cities_expanded.csv # Input city dataset
+├── bol_cities/
+  ├── bol_cities_expanded.csv # Input city dataset
 ├── utils.py               # Helper functions
 └── undownloaded_urls.log  # Log file for failed downloads
 ```
