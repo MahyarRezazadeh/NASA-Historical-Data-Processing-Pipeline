@@ -10,8 +10,11 @@ from main import create_cookies ,create_pandas_dataframe_and_delete_file_T2,crea
 
 
 
-cookies_text = ''
+# Earthdata login cookies are personal credentials: set them in the EARTHDATA_COOKIES environment variable.
 
+
+
+cookies_text = os.environ.get('EARTHDATA_COOKIES', '')
 cookies = create_cookies(cookies_text)
 
 async def download_file(session,url,semaphore,log_file):

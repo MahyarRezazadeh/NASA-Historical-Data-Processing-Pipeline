@@ -1,0 +1,9 @@
+# Third-party packages imported by the scripts in this repository.
+# Versions were not recorded; pin them once a working set is confirmed.
+aiohttp
+aiofiles
+pandas
+numpy
+xarray
+tqdm
+requests

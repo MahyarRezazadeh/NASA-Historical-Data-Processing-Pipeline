@@ -82,7 +82,7 @@ Errors and missing files are logged in:
 ---
 
 ## Notes
-- Ensure you replace `USE_YOUR_COOKIES` in `downloader.py` with your actual NASA cookies.
+- Set your own NASA Earthdata login cookies in the `EARTHDATA_COOKIES` environment variable before running `downloader.py`. Never paste cookies into the code.
 - The scripts are designed to handle missing data gracefully, but logs should be checked for any issues.
 - The dataset spans from **2000-01-01 to 2024-01-01**.
 
@@ -92,6 +92,31 @@ Errors and missing files are logged in:
 - Automate cookie retrieval for seamless authentication.
 - Implement parallel processing to improve performance.
 - Extend support for additional datasets.
+
+---
+
+## Requirements
+The scripts import these third-party Python packages: `aiohttp`, `aiofiles`, `pandas`, `numpy`, `xarray`, `tqdm` and `requests`. They are listed in `requirements.txt`:
+
+```bash
+pip install -r requirements.txt
+```
+
+`xarray`, `tqdm` and `requests` are imported by `utils.py` but are not in the install command above. `downloader.py` and `add_pm25.py` import their helper functions from a module named `main`, which is not in this repository; the functions they use are defined in `utils.py`.
+
+---
+
+## Data
+- **Source:** NASA datasets downloaded from the URL list in `NASA/subset_MERRA2_CNN_HAQAST_PM25_1_20241009_082513_.txt` (set in `downloader.py`). The file-name checks in `downloader.py` also cover MERRA-2, FLDAS and GLDAS products. Downloading needs a NASA login, passed to the script as browser cookies.
+- **City list:** `bol_cities/bol_cities_expanded.csv` (columns `lat` and `lon`). Its source is not recorded.
+- **Not in the repository:** the URL list, the downloaded `.nc` files, the daily `PM25/` CSV files, the monthly `PM25_monthly/` files and the city list are not included. `.gitignore` excludes `.nc` and `.csv` files.
+- **Date range:** the Notes above give 2000-01-01 to 2024-01-01, which matches `add_pm25.py`. `to_monthly_pm25.py` (line 26) currently uses 2004-06-01 to 2014-01-01.
+- Login cookies are personal credentials. Keep them out of the repository.
+
+---
+
+## Running time
+Not recorded.
 
 ---
 
